@@ -1,0 +1,19 @@
+{
+    "name": "pusram/uts-sem6",
+    "description": "UTS Semester 6",
+    "type": "project",
+    "require": {
+        "php": "7.4.5"
+    },
+    "authors": [
+        {
+            "name": "Puspa",
+            "email": "ramadhanipuspaa@gmail.com"
+        }
+    ],
+    "autoload" : {
+        "psr-4" : {
+            "app\\" : "app/"
+        }
+    }
+}
