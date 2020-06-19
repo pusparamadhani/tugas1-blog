@@ -27,7 +27,8 @@ class album extends controller {
 	}
 
 	public function tampil() {
-		$sql = "SELECT * FROM album";
+		$sql = "SELECT album.*, photos.text as ART FROM album, photos WHERE album.photo_id=photos.id 
+		ORDER BY album.text";
 		$stmt = $this->db->prepare($sql);
 		$stmt->execute();
 
@@ -49,6 +50,21 @@ class album extends controller {
 
 		return $row;
 	}
+
+	public function listPhotos()
+	{
+		$sql = "SELECT * FROM photos";
+		$stmt = $this->db->prepare($sql);
+		$stmt->execute();
+
+		$data = [];
+		while ($row = $stmt->fetch()) {
+			$data[] = $row;
+		}
+
+		return $data;
+	}
+
 
 	public function update()
 	{

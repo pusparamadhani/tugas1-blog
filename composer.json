@@ -1,17 +1,17 @@
 {
-    "name": "pusram/uts-sem6",
-    "description": "UTS Semester 6",
+    "name": "pusram/bublegum-shop",
+    "description": "Website Penjualan",
     "type": "project",
     "require": {
-        "php": "7.4.5"
+        "php": "7.4.6"
     },
     "authors": [
         {
-            "name": "Puspa",
+            "name": "pusparamadhani",
             "email": "ramadhanipuspaa@gmail.com"
         }
     ],
-    "autoload" : {
+     "autoload" : {
         "psr-4" : {
             "app\\" : "app/"
         }

@@ -1,14 +1,10 @@
 <?php
-   session_start();
    if(isset($_SESSION['username'])) {
-   header("Location: index.php"); }
+   header("Location: dashbooard.php"); }
    require_once("koneksi.php");
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Halaman Login</title>
-	<link rel="stylesheet" type="text/css" href="layout/assets/css/style.css">
+
+<link rel="stylesheet" type="text/css" href="layout/assets/css/style.css">
 </head>
 <body>
 		<div class="box-login" align="center">

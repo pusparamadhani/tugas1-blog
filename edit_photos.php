@@ -1,11 +1,10 @@
 <?php
-include "koneksi.php";
+include "app/controller.php";
 include "app/photos.php";
 
 $id = $_GET['id'];
-$photos = new photos();
+$photos = new app\photos();
 $row = $photos->edit($id);
-
 ?>
 <center>
 <h2>EDIT PHOTO</h2>
@@ -26,24 +25,7 @@ $row = $photos->edit($id);
 		</tr>
 		<tr>
 			<td>ID POST</td>
-			<td>
-				<select name="id">
-						<option>- Pilih -</option>
-						<?php
-						$sql3 = "SELECT * FROM post";
-						$stmt2 = $koneksi ->prepare($sql3);
-						$stmt2->execute();
-						while ($row = $stmt2->fetch()) { 
-							if ($row['id'] == $result['id']) {
-								$selected = 'selected';
-							}else{
-								$selected = '';
-							}
-							?>
-						<option value="<?php echo $row['id']; ?>" <?php echo $selected ?>><?php echo $row['id']; ?></option>
-						<?php } ?>
-					</select>
-			</td>
+			<td><input type="text" name="post_id" value="<?php echo $row['post_id']; ?>"></td>
 		</tr>
 		<tr>
 			<td></td>

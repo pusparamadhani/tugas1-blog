@@ -1,19 +1,22 @@
 <?php
-
+include "app/controller.php";
+include "app/category.php";
 /** new app (nama folder bukan namespace) **/
-$category = new app\Category();
+$category = new app\category();
 $rows = $category->tampil();
 
 ?>
+
 <center>
-<h2>DAFTAR CATEGORY</h2>
-<a href="index.php?page=input_category">Tambah Category</a>
+<h2>DATA CATEGORY</h2>
+<a href="dashboard.php?page=input_category">Tambah Category</a>
 <table>
 	<tr>
-		<td>ID</td>
-		<td>NAME</td>
-		<td>TEXT</td>
-		<td>AKSI</td>
+		<th>ID</th>
+		<th>NAME</th>
+		<th>TEXT</th>
+		<th>AKSI</th>
+		<th></th>
 	</tr>
 	
 	<?php foreach ($rows as $row) { ?>
@@ -21,8 +24,8 @@ $rows = $category->tampil();
 		<td><?php echo $row['id']; ?></td>
 		<td><?php echo $row['name']; ?></td>
 		<td><?php echo $row['text']; ?></td>
-		<td><a href="index.php?page=edit_category&id=<?php echo $row['id']; ?>">Edit</a></td>
-		<td><a href="index.php?page=proses_category&delete-id=<?php echo $row['id']; ?>">Delete</a></td>
+		<td><a href="dashboard.php?page=edit_category&id=<?php echo $row['id']; ?>">Edit</a></td>
+		<td><a href="dashboard.php?page=proses_category&delete-id=<?php echo $row['id']; ?>">Delete</a></td>
 	</tr>
 <?php } ?>
 </table>

@@ -38,6 +38,17 @@ CREATE TABLE album (
 		REFERENCES photos (id)
 );
 
+CREATE TABLE tb_users (
+	user_id INT(11) NOT NULL AUTO_INCREMENT,
+	user_name VARCHAR(100) NOT NULL,
+	user_password VARCHAR(256) NOT NULL,
+	user_email VARCHAR(100) NOT NULL,
+	user_nama_lengkap VARCHAR(100) NOT NULL,
+	user_role CHAR(2) DEFAULT '2',
+	PRIMARY KEY(user_id),
+	UNIQUE KEY(user_name)
+);
+
 CREATE TABLE tb_user (
 	user_id INT(10) NOT NULL AUTO_INCREMENT,
 	user_name VARCHAR(50) NOT NULL,
@@ -46,5 +57,4 @@ CREATE TABLE tb_user (
 	PRIMARY KEY(user_id),
 	UNIQUE KEY(user_name)
 );
-
 INSERT INTO tb_user VALUES ('', 'admin', 'admin', 1);

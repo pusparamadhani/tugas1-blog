@@ -1,7 +1,9 @@
 <?php
+include "app/controller.php";
+include "app/album.php";
 
-$photos = new app\photos();
-$rowPhotos = $photos->tampil();
+$album = new app\album();
+$rowPhotos = $album->tampil();
 
 ?>
 <h2>TAMBAH ALBUM</h2>
@@ -20,10 +22,10 @@ $rowPhotos = $photos->tampil();
 	<tr>
 		<td>ID PHOTO</td>
 		<td>
-			<select name="id">
+			<select name="photos_id">
 						<option>- Pilih -</option>
 						<?php foreach ($rowPhotos as $row) {?>
-						<option value="<?php echo $row ['id']; ?>"><?php echo $row ['id']; ?></option>
+						<option value="<?php echo $row ['id']; ?>"><?php echo $row['id']; ?></option>
 						<?php } ?>
 					</select>
 		</td>

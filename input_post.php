@@ -1,7 +1,9 @@
 <?php
+include "app/controller.php";
+include "app/post.php";
 
-$category = new app\category();
-$rowCategory = $category->tampil();
+$post = new app\post();
+$rowCategory = $post->tampil();
 
 ?>
 <h2>TAMBAH POSTAN</h2>
@@ -27,10 +29,10 @@ $rowCategory = $category->tampil();
 	<tr>
 		<td>ID CATEGORY</td>
 		<td>
-			<select name="id">
+			<select name="cat_id">
 				<option>- PILIH -</option>
 				<?php foreach ($rowCategory as $row) {?>
-					<option value="<?php echo $row['id'] ?>"><?php echo $row['name'] ?></option>
+					<option value="<?php echo $row['id']; ?>"><?php echo $row['id']; ?></option>
 				<?php } ?>
 					</select>
 		</td>

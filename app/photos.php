@@ -28,7 +28,8 @@ class photos extends controller {
 	}
 
 	public function tampil() {
-		$sql = "SELECT * FROM photos";
+		$sql = "SELECT photos.*, post.title as ART FROM photos, post WHERE photos.post_id=post.id 
+		ORDER BY photos.title";
 		$stmt = $this->db->prepare($sql);
 		$stmt->execute();
 
@@ -37,6 +38,20 @@ class photos extends controller {
 		while ($row = $stmt->fetch()) {
 			$data[] = $row;
 		}
+		return $data;
+	}
+
+	public function listPost()
+	{
+		$sql = "SELECT * FROM post";
+		$stmt = $this->db->prepare($sql);
+		$stmt->execute();
+
+		$data = [];
+		while ($row = $stmt->fetch()) {
+			$data[] = $row;
+		}
+
 		return $data;
 	}
 	public function edit($id)

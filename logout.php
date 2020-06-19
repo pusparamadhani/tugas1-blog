@@ -12,7 +12,7 @@
 <body>
 <div align="center" class="logout">
   <h2>ANDA TELAH BERHASIL LOGOUT</h2>
-  Silahkan klik <a href="login.php">disini</a> untuk login kembali
+  Silahkan klik <a href="index.php">disini</a> untuk login kembali
 </div>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>BUBLEGUM SHOP</title>
-	<link rel="stylesheet" type="text/css" href="<?php echo ASSETS; ?>css/style.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo ASSETS; ?>css/style.css"">
 </head>
 <body>
 <div class="container">
@@ -11,8 +11,12 @@
 	</div>
 		
 	<div class="menu">
-		<a href="index.php">HOME</a>
-		<a href="index.php?page=login">LOGIN</a>
+		<a href="dashboard.php?page=tampil_category">CATEGORY</a>
+		<a href="dashboard.php?page=tampil_post">POST</a>
+		<a href="dashboard.php?page=tampil_photos">PHOTOS</a>
+		<a href="dashboard.php?page=tampil_album">ALBUM</a>
+		<a href="dashboard.php?page=user_tampil">USER</a>
+		<a href="logout.php">LOGOUT</a>
 	</div>
 	
 	<div class="main">
@@ -20,7 +24,7 @@
 			if (isset($_GET['page'])) {
 				include $_GET['page'] . ".php";
 			} else {
-				include "index_main.php";
+				include "dashboard_main.php";
 			}
 		?>
 	</div>

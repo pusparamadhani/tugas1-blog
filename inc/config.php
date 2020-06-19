@@ -1,7 +1,7 @@
 <?php
 
 
-define('URL', 'http://localhost/UTS-sem6/');
+define('URL', 'http://localhost/Bublegum-Shop/');
 
 define('ASSETS', URL . 'layout/assets/');
 

@@ -30,7 +30,8 @@ class post extends controller {
 	}
 
 	public function tampil() {
-		$sql = "SELECT * FROM post";
+		$sql = "SELECT post.*, category.name as ART FROM post, category WHERE post.cat_id=category.id 
+		ORDER BY post.title";
 		$stmt = $this->db->prepare($sql);
 		$stmt->execute();
 
@@ -52,6 +53,20 @@ class post extends controller {
 		$row = $stmt->fetch();
 
 		return $row;
+	}
+
+	public function listCategory()
+	{
+		$sql = "SELECT * FROM category";
+		$stmt = $this->db->prepare($sql);
+		$stmt->execute();
+
+		$data = [];
+		while ($row = $stmt->fetch()) {
+			$data[] = $row;
+		}
+
+		return $data;
 	}
 
 	public function update()

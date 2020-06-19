@@ -1,8 +1,9 @@
 <?php
+include "app/controller.php";
+include "app/photos.php";
 
 $photos = new app\photos();
 $rowPost = $photos->tampil();
-
 ?>
 <h2>TAMBAH PHOTO</h2>
 <center>
@@ -23,10 +24,10 @@ $rowPost = $photos->tampil();
 	<tr>
 		<td>ID POST</td>
 		<td>
-			<select name="id">
+			<select name="post_id">
 						<option>- Pilih -</option>
-						<?php foreach ($post as $post) {?>
-						<option value="<?php echo $post ['id']; ?>"><?php echo $post ['id']; ?></option>
+						<?php foreach ($rowPost as $row) {?>
+						<option value="<?php echo $row ['id']; ?>"><?php echo $row ['title']; ?></option>
 						<?php } ?>
 					</select>
 		</td>

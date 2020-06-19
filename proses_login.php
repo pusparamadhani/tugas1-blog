@@ -13,7 +13,7 @@
    if ($hasil>0)
    {
     $_SESSION['username']=$row['user_name'];
-    header('location:index.php');
+    header('location:dashboard.php');
    }
    else
    {

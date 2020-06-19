@@ -1,8 +1,9 @@
 <?php
+include "app/controller.php";
 include "app/category.php";
 
 $id = $_GET['id'];
-$category = new category();
+$category = new app\category();
 $row = $category->edit($id);
 
 ?>

@@ -1,11 +1,11 @@
 <?php
-include "koneksi.php";
+include "app/controller.php";
 include "app/album.php";
 
 $id = $_GET['id'];
-$album = new album();
+$album = new app\album();
 $row = $album->edit($id);
-
+$lst = $album->listPhotos();
 ?>
 <center>
 <h2>EDIT ALBUM</h2>
@@ -23,22 +23,11 @@ $row = $album->edit($id);
 		<tr>
 			<td>ID PHOTOS</td>
 			<td>
-				<select name="id">
-						<option>- Pilih -</option>
-						<?php
-						$sql3 = "SELECT * FROM photos";
-						$stmt2 = $koneksi ->prepare($sql3);
-						$stmt2->execute();
-						while ($row = $stmt2->fetch()) { 
-							if ($row['id'] == $result['id']) {
-								$selected = 'selected';
-							}else{
-								$selected = '';
-							}
-							?>
-						<option value="<?php echo $row['id']; ?>" <?php echo $selected ?>><?php echo $row['id']; ?></option>
-						<?php } ?>
-					</select>
+				<select name="photos_id">
+					<?php foreach ($lst as $ls) { ?>
+					<option value="<?php echo $ls['id']; ?>"<?php echo $row['id']==$ls['id'] ? " selected" : ""; ?>><?php echo $ls['text']; ?></option>
+					<?php } ?>
+				</select>
 			</td>
 		</tr>
 		<tr>

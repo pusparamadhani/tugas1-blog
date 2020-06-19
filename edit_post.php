@@ -1,9 +1,10 @@
 <?php
+include "app/controller.php";
+include "app/post.php";
 
 $id = $_GET['id'];
 $post = new app\post();
 $row = $post->edit($id);
-
 ?>
 
 <center>
